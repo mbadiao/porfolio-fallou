@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #2c2319;
+  --color-accent: #dcb799;
+  --color-primary: #dcb799;
+
+  --font-syne: "Syne", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Custom styles */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-accent);
+  font-family: var(--font-inter);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: radial-gradient(circle at 50% 50%, rgba(220, 183, 153, 0.05) 0%, transparent 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-syne);
+}
+
+.slide-section {
+  @apply h-screen w-full flex flex-col justify-center items-center relative overflow-hidden;
+  scroll-snap-align: start;
+}
+
+.nav-link {
+  @apply relative py-1 px-4 transition-colors duration-300;
+  font-family: var(--font-syne);
+  color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] transition-all duration-300;
+  background-color: var(--color-accent);
+}
+
+.nav-link:hover::after {
+  @apply w-1/2;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 9999px;
+  transition: background-color 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+/* Base animations */
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.reveal-image {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
