@@ -12,9 +12,13 @@ const ProjectTouba: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
                 <div className="md:col-span-8 order-2 md:order-1 reveal-content">
-                    <div className="aspect-[16/9] bg-accent/5 rounded-2xl border border-accent/10 flex items-center justify-center relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent" />
-                        <span className="font-syne text-accent/20 text-xs tracking-[0.3em] uppercase">Villa Touba Panoramic View</span>
+                    <div className="aspect-[16/9] rounded-2xl border border-accent/10 overflow-hidden group relative shadow-2xl">
+                        <img
+                            src="/Projet 2_Touba_vue de face.png"
+                            alt="Villa Touba"
+                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-background/20 to-transparent pointer-events-none" />
                     </div>
                 </div>
 

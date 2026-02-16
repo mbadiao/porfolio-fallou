@@ -25,15 +25,17 @@ const Welcome: React.FC = () => {
                 </div>
             </div>
 
-            <div className="reveal-content relative aspect-[4/5] bg-accent/5 rounded-2xl overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-background to-transparent opacity-60 z-10" />
-                {/* Placeholder for architecture image */}
-                <div className="w-full h-full flex items-center justify-center border border-accent/10">
-                    <span className="font-syne text-accent/20 tracking-widest uppercase">Visual Concept</span>
-                </div>
+            <div className="reveal-content relative aspect-[4/5] rounded-2xl overflow-hidden group">
+                <img
+                    src="/Projet_1_Rendu2.png"
+                    alt="Visual Concept"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-background/80 to-transparent z-10" />
+
                 <div className="absolute bottom-8 left-8 right-8 z-20">
                     <div className="w-12 h-1 bg-accent mb-4 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
-                    <p className="font-syne text-xs tracking-widest text-accent/40 uppercase">Architecture Excellence</p>
+                    <p className="font-syne text-xs tracking-widest text-accent uppercase">Architecture Excellence</p>
                 </div>
             </div>
         </div>

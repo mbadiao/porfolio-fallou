@@ -34,13 +34,25 @@ const ProjectKeurMassar: React.FC = () => {
                 </div>
 
                 <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 reveal-content">
-                    <div className="aspect-video md:aspect-square bg-accent/5 rounded-xl border border-accent/10 flex items-center justify-center relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40" />
-                        <span className="font-syne text-accent/20 text-xs tracking-[0.3em] uppercase">R+1 Exterior Render</span>
+                    <div className="aspect-video md:aspect-square rounded-xl border border-accent/10 overflow-hidden group relative">
+                        <img
+                            src="/Projet_1_Rendu1.png"
+                            alt="Vue extérieure R+1"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <span className="font-syne text-accent text-xs tracking-widest uppercase">Exterior</span>
+                        </div>
                     </div>
-                    <div className="aspect-video md:aspect-square bg-accent/5 rounded-xl border border-accent/10 flex items-center justify-center relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40" />
-                        <span className="font-syne text-accent/20 text-xs tracking-[0.3em] uppercase">Interior Master Suite</span>
+                    <div className="aspect-video md:aspect-square rounded-xl border border-accent/10 overflow-hidden group relative">
+                        <img
+                            src="/Chambre parent.png"
+                            alt="Suite parentale"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <span className="font-syne text-accent text-xs tracking-widest uppercase">Master Suite</span>
+                        </div>
                     </div>
                 </div>
             </div>

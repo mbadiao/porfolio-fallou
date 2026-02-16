@@ -13,17 +13,22 @@ const Plans2D: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[1, 2, 3, 4].map((i) => (
+                {[
+                    { src: "/Ngor 2D.png", label: "Plan Ngor" },
+                    { src: "/Capture d'écran 2025-12-05 154038.png", label: "Esquisse Technique" },
+                    { src: "/Capture d'écran 2026-01-11 204517.png", label: "Détail Coupe" },
+                    { src: "/Capture d'écran 2025-12-27 221816.png", label: "Plan Masse" }
+                ].map((item, i) => (
                     <div key={i} className="reveal-content flex flex-col gap-6">
-                        <div className="aspect-[3/4] bg-accent/5 rounded-sm border border-accent/10 p-4 transition-all duration-500 hover:border-accent/40 group">
-                            <div className="w-full h-full border border-accent/5 flex items-center justify-center p-2 relative">
-                                <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-accent/40 group-hover:w-12 group-hover:h-12 transition-all" />
-                                <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-accent/40 group-hover:w-12 group-hover:h-12 transition-all" />
-                                <span className="font-syne text-accent/20 text-[10px] tracking-widest uppercase">Plan Technique 0{i}</span>
-                            </div>
+                        <div className="aspect-[3/4] bg-white/5 rounded-sm border border-accent/10 p-2 transition-all duration-500 hover:border-accent/40 group overflow-hidden relative">
+                            <img
+                                src={item.src}
+                                alt={item.label}
+                                className="w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 invert-[.05]"
+                            />
                         </div>
                         <div className="space-y-1">
-                            <p className="font-syne text-accent text-xs font-bold tracking-widest uppercase text-center">Niveau {i > 2 ? i - 2 : i}</p>
+                            <p className="font-syne text-accent text-xs font-bold tracking-widest uppercase text-center">{item.label}</p>
                         </div>
                     </div>
                 ))}

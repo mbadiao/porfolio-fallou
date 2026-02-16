@@ -17,13 +17,24 @@ const ProjectMboro: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[1, 2, 3].map((i) => (
+                {[
+                    { src: "/RDC_OK_1.png", label: "Vue RDC 01" },
+                    { src: "/RDC_OK_2.png", label: "Vue RDC 02" },
+                    { src: "/Projet_1_Rendu2.png", label: "Perspective Globale" }
+                ].map((img, i) => (
                     <div key={i} className="reveal-content group flex flex-col gap-4">
-                        <div className="aspect-[4/3] bg-accent/5 rounded-xl border border-accent/10 flex items-center justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500" />
-                            <span className="font-syne text-accent/20 text-[10px] tracking-[0.3em] uppercase">Facade View 0{i}</span>
+                        <div className="aspect-[4/3] rounded-xl border border-accent/10 overflow-hidden relative">
+                            <img
+                                src={img.src}
+                                alt={img.label}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-500" />
                         </div>
-                        <div className="h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-700" />
+                        <div className="flex justify-between items-center">
+                            <span className="font-syne text-accent/40 text-[10px] tracking-[0.3em] uppercase">{img.label}</span>
+                            <div className="h-[1px] w-0 group-hover:w-12 bg-accent transition-all duration-700" />
+                        </div>
                     </div>
                 ))}
             </div>

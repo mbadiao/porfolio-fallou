@@ -7,13 +7,12 @@ const Modelling: React.FC = () => {
                 <div className="reveal-content order-2 md:order-1">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-accent/5 rounded-2xl blur-xl" />
-                        <div className="relative aspect-video bg-background border border-accent/20 rounded-xl overflow-hidden flex items-center justify-center shadow-2xl">
-                            <div className="absolute top-4 left-4 flex gap-2">
-                                <div className="w-2 h-2 rounded-full bg-red-500/50" />
-                                <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
-                                <div className="w-2 h-2 rounded-full bg-green-500/50" />
-                            </div>
-                            <span className="font-syne text-accent/20 text-xs tracking-widest uppercase">3D Wireframe / Model View</span>
+                        <div className="relative aspect-video bg-background border border-accent/20 rounded-xl overflow-hidden shadow-2xl">
+                            <img
+                                src="/DARA.png"
+                                alt="Modélisation 3D Dara"
+                                className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+                            />
                         </div>
                     </div>
                 </div>
